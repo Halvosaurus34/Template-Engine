@@ -21,7 +21,7 @@ const render = (employees) => {
       .filter((employee) => employee.getRole() === "Intern")
       .map((intern) => renderIntern(intern))
   );
-
+  console.log("[render html]", html);
   return renderMain(html.join(""));
 };
 
