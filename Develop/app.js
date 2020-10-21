@@ -13,11 +13,36 @@ const Employee = require("./lib/Employee");
 
 let employeeArray = [];
 
+function promptManager() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      message: "What is the team managers name?",
+      name: "name",
+    },
+    {
+      type: "input",
+      message: "What is their ID number?",
+      name: "id",
+    },
+    {
+      type: "input",
+      message: "What is their email?",
+      name: "email",
+    },
+    {
+      type: "input",
+      message: "What is their office number?",
+      name: "officeNumber",
+    },
+  ]);
+}
+
 function promptUserInit() {
   return inquirer.prompt([
     {
       type: "input",
-      message: "How many emplyees do you want to add?",
+      message: "How many team members are there?",
       name: "EmpNum",
     },
   ]);
@@ -43,7 +68,7 @@ function promptUser() {
     {
       type: "checkbox",
       message: "What is their role?",
-      choices: ["Engineer", "Intern", "Manager"],
+      choices: ["Engineer", "Intern"],
       name: "role",
     },
   ]);
@@ -69,18 +94,17 @@ function promptIntern() {
   ]);
 }
 
-function promptManager() {
-  return inquirer.prompt([
-    {
-      type: "input",
-      message: "What is their office number?",
-      name: "officeNum",
-    },
-  ]);
-}
-
 async function initialize() {
   try {
+    let hasManager = false;
+    const managerResponse = await promptManager();
+    let empMan = new Manager(
+      managerResponse.name,
+      managerResponse.id,
+      managerResponse.email,
+      managerResponse.officeNumber
+    );
+    employeeArray.push(empMan);
     const initResponse = await promptUserInit();
     let EmpNum = initResponse.EmpNum;
     console.log(initResponse.EmpNum);
@@ -88,7 +112,6 @@ async function initialize() {
       const response = await promptUser();
       let empEng;
       let empInt;
-      let empMan;
 
       if (response.role == "Engineer") {
         const resEng = await promptEngineer();
@@ -96,7 +119,6 @@ async function initialize() {
           response.name,
           response.id,
           response.email,
-          response.role[0],
           resEng.github
         );
         employeeArray.push(empEng);
@@ -106,27 +128,16 @@ async function initialize() {
           response.name,
           response.id,
           response.email,
-          response.role[0],
           resInt.school
         );
         employeeArray.push(empInt);
-      } else if (response.role == "Manager") {
-        const resMan = await promptManager();
-        empMan = new Manager(
-          response.name,
-          response.id,
-          response.email,
-          response.role[0],
-          resMan.officeNum
-        );
-        employeeArray.push(empMan);
       }
       console.log("Employee Added!");
     }
     console.log(employeeArray);
     const renderHTML = render(employeeArray);
     console.log(renderHTML);
-    fs.writeFileSync("team.html", render(employeeArray));
+    fs.writeFileSync(outputPath, render(employeeArray));
     // console.log(employ);
   } catch (error) {
     console.log(error);
