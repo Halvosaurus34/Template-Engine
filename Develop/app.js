@@ -12,7 +12,7 @@ const render = require("./lib/htmlRenderer");
 const Employee = require("./lib/Employee");
 
 let employeeArray = [];
-
+//starts prompt for manager
 function promptManager() {
   return inquirer.prompt([
     {
@@ -37,7 +37,7 @@ function promptManager() {
     },
   ]);
 }
-
+//starts prompt for number of team members
 function promptUserInit() {
   return inquirer.prompt([
     {
@@ -47,7 +47,7 @@ function promptUserInit() {
     },
   ]);
 }
-
+//starts main prompt for team member
 function promptUser() {
   return inquirer.prompt([
     {
@@ -73,7 +73,7 @@ function promptUser() {
     },
   ]);
 }
-
+//specific prompt for engineer
 function promptEngineer() {
   return inquirer.prompt([
     {
@@ -83,7 +83,7 @@ function promptEngineer() {
     },
   ]);
 }
-
+//specific prompt for intern
 function promptIntern() {
   return inquirer.prompt([
     {
@@ -93,7 +93,7 @@ function promptIntern() {
     },
   ]);
 }
-
+//starts prompts and uses await to wait for response
 async function initialize() {
   try {
     let hasManager = false;
