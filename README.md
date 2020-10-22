@@ -52,10 +52,10 @@ I also used [Bootstrap](https://getbootstrap.com/).
 
 ## Screenshots
 
-![Website Screenshot](./Develop/assets/screenshot.PNG)
+![Website Screenshot](./assets/screenshot.PNG)
 
 ---
 
-![Website Screenshot](./Develop/assets/HTMLscreenshot.PNG)
+![Website Screenshot](./assets/HTMLscreenshot.PNG)
 
 ---
