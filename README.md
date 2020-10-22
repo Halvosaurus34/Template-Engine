@@ -1,8 +1,8 @@
 # Template-Engine
 
-# Description
-
 ![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
+
+## Description
 
 We were asked to create a command line application which will create an HTML file that displays a nicely formatted team roster based on the information provided by the user. The main focus of buiding this code was to utilize object oriented programming. Jest was used to conduct testing on the javascript files, fs and path were used for creating/reading files.
 
@@ -36,9 +36,7 @@ For additional questions please reach out to me at: lhalvorson34@gmail.com.
 
 ## Links
 
----
-
-[GitHub Repository](https://github.com/Halvosaurus34/Template-Engine)
+[Template Engine GitHub Repository](https://github.com/Halvosaurus34/Template-Engine)
 
 ---
 
@@ -47,3 +45,13 @@ I used [Font Awesome](https://fontawesome.com/) for the Icons.
 ---
 
 I also used [Bootstrap](https://getbootstrap.com/).
+
+## Screenshots
+
+![Website Screenshot](./Develop/assets/screenshot.PNG)
+
+---
+
+![Website Screenshot](./Develop/assets/HTMLscreenshot.PNG)
+
+---
