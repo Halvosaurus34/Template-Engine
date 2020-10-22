@@ -36,6 +36,10 @@ For additional questions please reach out to me at: lhalvorson34@gmail.com.
 
 ## Links
 
+[Template Engine Video Presentation](https://drive.google.com/file/d/1HFWV4gni13xcPLAIDkZO8lgTiO9KZ8ke/view?usp=sharing)
+
+---
+
 [Template Engine GitHub Repository](https://github.com/Halvosaurus34/Template-Engine)
 
 ---
